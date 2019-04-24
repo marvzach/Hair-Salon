@@ -29,11 +29,11 @@ public class App {
     }, new VelocityTemplateEngine());
 
  
-//     get("/clients", (request, response) -> {
-//       Map<String, Object> model = new HashMap<String, Object>();
-//       model.put("template", "templates/clients.vtl" );
-//       return new ModelAndView(model, layout);
-//     }, new VelocityTemplateEngine());
+    get("/clients", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/clients.vtl" );
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
 //     post("/stylists", (request, response) -> {
 //       HashMap<String, Object> model = new HashMap<String, Object>();
