@@ -73,13 +73,13 @@ public class App {
     }, new VelocityTemplateEngine());
 
 
-//     post("/stylists/:id/delete", (request, response) -> {
-//       HashMap<String, Object> model = new HashMap<String, Object>();
-//       Stylist stylists = Stylist.find(Integer.parseInt(request.params("id")));
-//       stylists.delete();
-//       response.redirect("/stylists");
-//       return null;
-//     });
+    // post("/stylists/:id/delete", (request, response) -> {
+    //   HashMap<String, Object> model = new HashMap<String, Object>();
+    //   Stylist stylists = Stylist.find(Integer.parseInt(request.params("id")));
+    //   stylists.delete();
+    //   response.redirect("/stylists");
+    //   return null;
+    // });
 
 // //for showing the update page in updateClient.vtl
 //     get("/clients/:id", (request, response) -> {
