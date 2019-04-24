@@ -44,14 +44,14 @@ public class App {
       return null;
     });
 
-//     get("/stylists/:id", (request, response) -> {
-//       HashMap<String, Object> model = new HashMap<String, Object>();
-//       Stylist existingStylist = Stylist.find(Integer.parseInt(request.params(":id")));
-//       model.put("stylist", existingStylist);
-//       model.put("clients", existingStylist.getClients());
-//       model.put("template", "templates/clients.vtl");
-//       return new ModelAndView(model, layout);
-//     }, new VelocityTemplateEngine());
+    get("/stylists/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Stylist existingStylist = Stylist.find(Integer.parseInt(request.params(":id")));
+      model.put("stylist", existingStylist);
+      model.put("clients", existingStylist.getClients());
+      model.put("template", "templates/clients.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
  
 
