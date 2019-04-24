@@ -1,39 +1,38 @@
+import java.util.List;
+import org.sql2o.*;
 
-// import java.util.List;
-// import org.sql2o.*;
+public class Client {
+  private int id;
+  private String name;
+  private int stylistId;
 
-// public class Client {
-//   private int id;
-//   private String name;
-//   private int stylistId;
+  public Client(String name, int stylistId) {
+    this.name = name;
+    this.stylistId = stylistId;
+  }
 
-//   public Client(String name, int stylistId) {
-//     this.name = name;
-//     this.stylistId = stylistId;
-//   }
+  public String getName(){
+    return name;
+  }
 
-//   public String getName(){
-//     return name;
-//   }
+  public int getId() {
+    return id;
+  }
 
-//   public int getId() {
-//     return id;
-//   }
-
-//   public int getStylistId() {
-//     return stylistId;
-//   }
-//   @Override
-//   public boolean equals(Object anotherClient) {
-//     if(!(anotherClient instanceof Client)){
-//       return false;
-//     }else {
-//       Client newClient = (Client) anotherClient;
-//       return this.getName().equals(newClient.getName()) &&
-//       this.getId() == newClient.getId() &&
-//       this.getStylistId() == newClient.getStylistId();
-//     }
-//   }
+  public int getStylistId() {
+    return stylistId;
+  }
+  @Override
+  public boolean equals(Object anotherClient) {
+    if(!(anotherClient instanceof Client)){
+      return false;
+    }else {
+      Client newClient = (Client) anotherClient;
+      return this.getName().equals(newClient.getName()) &&
+      this.getId() == newClient.getId() &&
+      this.getStylistId() == newClient.getStylistId();
+    }
+  }
 //   public static List <Client> all(){
 //     String sql = "SELECT id, name, stylistId FROM clients";
 //     try(Connection con = DB.sql2o.open()) {
