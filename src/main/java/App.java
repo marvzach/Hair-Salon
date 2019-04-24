@@ -81,15 +81,15 @@ public class App {
       return null;
     });
 
-// //for showing the update page in updateClient.vtl
-//     get("/clients/:id", (request, response) -> {
-//       HashMap<String, Object> model = new HashMap<String, Object>();
-//       Client client = Client.find(Integer.parseInt(request.params("id")));
-//       Stylist stylist = Stylist.find(client.getStylistId());
-//       model.put("client", client); 
-//       model.put("template", "templates/updateClient.vtl");
-//       return new ModelAndView(model, layout);
-//     }, new VelocityTemplateEngine());
+//for showing the update page in updateClient.vtl
+    get("/clients/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Client client = Client.find(Integer.parseInt(request.params("id")));
+      Stylist stylist = Stylist.find(client.getStylistId());
+      model.put("client", client); 
+      model.put("template", "templates/updateClient.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
     
 //     //for update client
 //     post("/clients/:id", (request, response) -> {
