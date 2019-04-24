@@ -91,20 +91,17 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
     
-//     //for update client
-//     post("/clients/:id", (request, response) -> {
-//       HashMap<String, Object> model = new HashMap<String, Object>();
-//       Client client = Client.find(Integer.parseInt(request.params("id")));
-//       Stylist stylist = Stylist.find(client.getStylistId());
-//       String newName = request.queryParams("name");
-//       client.update(newName);
-//       model.put("stylist", stylist);
-//       String url = String.format("/stylists/%d", stylist.getId());
-//       response.redirect(url);
-//       return null;
-//     });
-
-
-
-//   }
-// }
+    //for update client
+    post("/clients/:id", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      Client client = Client.find(Integer.parseInt(request.params("id")));
+      Stylist stylist = Stylist.find(client.getStylistId());
+      String newName = request.queryParams("name");
+      client.update(newName);
+      model.put("stylist", stylist);
+      String url = String.format("/stylists/%d", stylist.getId());
+      response.redirect(url);
+      return null;
+    });
+  }
+}
