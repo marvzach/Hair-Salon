@@ -35,14 +35,14 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-//     post("/stylists", (request, response) -> {
-//       HashMap<String, Object> model = new HashMap<String, Object>();
-//       String stylistName = request.queryParams("stylist-name");
-//       Stylist newStylist = new Stylist(stylistName);
-//       newStylist.save();
-//       response.redirect("/");
-//       return null;
-//     });
+    post("/stylists", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      String stylistName = request.queryParams("stylist-name");
+      Stylist newStylist = new Stylist(stylistName);
+      newStylist.save();
+      response.redirect("/");
+      return null;
+    });
 
 //     get("/stylists/:id", (request, response) -> {
 //       HashMap<String, Object> model = new HashMap<String, Object>();
